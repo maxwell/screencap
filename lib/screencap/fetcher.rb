@@ -7,10 +7,15 @@ module Screencap
     def fetch(opts = {})
       @filename = opts.fetch(:output, clean_filename)
       raster(@url, @filename, opts[:div])
+      fetched_file
     end
 
     def filename
       @filename
+    end
+
+    def fetched_file
+      File.open(filename)
     end
 
     def raster(*args)

@@ -6,8 +6,7 @@ describe Screencap::Fetcher do
   end
 
   it 'supports a custom filename' do
-    f = Screencap::Fetcher.new('http://yahoo.com')
-    f.fetch(:output => Screencap::TMP_DIRECTORY + 'kats.png')
-    File.exists?(f.filename).should == true
+    screenshot = Screencap::Fetcher.new('http://yahoo.com').fetch(:output => Screencap::TMP_DIRECTORY + 'kats.png')
+    File.exists?(screenshot).should == true
   end
 end
