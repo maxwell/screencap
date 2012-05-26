@@ -1,6 +1,6 @@
 # Screencap
 
-TODO: Write a gem description
+A screenshot gem you can use from your ruby application. Uses Phantom.js under the hood.
 
 ## Installation
 
@@ -18,8 +18,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+  require 'screencap'
 
+  f = Screencap::Fetcher.new('http://google.com')
+  f.fetch(:output => "some path that isnt the default tmp directory", :div => 'the div you want to snap, like .header') #these options are OPTIONAL
+```
+
+## To-do
+
+more tests
+better configuration
+expose more options
 ## Contributing
 
 1. Fork it
