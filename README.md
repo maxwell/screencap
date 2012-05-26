@@ -22,7 +22,14 @@ Or install it yourself as:
   require 'screencap'
 
   f = Screencap::Fetcher.new('http://google.com')
-  f.fetch(:output => "some path that isnt the default tmp directory", :div => 'the div you want to snap, like .header') #these options are OPTIONAL
+  screenshot = f.fetch
+```
+
+it also currently supports a couple of options
+
+```ruby
+  f = Screencap::Fetcher.new('http://google.com')
+  screenshot = f.fetch(:div => '.header', :output => '~/my_directory.png') #dont forget the extension!
 ```
 
 ## To-do
