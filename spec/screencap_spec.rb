@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Screencap do
-  it 'requires additional testing'
+  it 'works' do
+    Screencap::Fetcher.new('http://google.com').fetch
+  end
+
 end
