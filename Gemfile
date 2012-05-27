@@ -5,4 +5,6 @@ gem 'guard'
 gem 'guard-rspec'
 gem 'guard-bundler'
 
+gem 'phantomjs.rb'
+
 gemspec
