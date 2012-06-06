@@ -4,7 +4,5 @@ source 'https://rubygems.org'
 gem 'guard'
 gem 'guard-rspec'
 gem 'guard-bundler'
-
-gem 'phantomjs.rb'
-
+gem 'phantomjs.rb', :git => 'git://github.com/westoque/phantomjs.rb.git'
 gemspec
