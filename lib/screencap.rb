@@ -5,7 +5,7 @@ require 'pathname'
 
 module Screencap
   SCREENCAP_ROOT = Pathname.new(File.dirname(__FILE__))
-  TMP_DIRECTORY = SCREENCAP_ROOT.join('..', 'tmp')
+  # TMP_DIRECTORY = SCREENCAP_ROOT.join('..', 'tmp')
 end
 
 #config

@@ -23,7 +23,7 @@ module Screencap
     end
 
     def clean_filename
-      "#{TMP_DIRECTORY}/#{@url.delete('/.:?!')}.png"
+      "#{@url.delete('/.:?!')}.png"
     end
   end
 end
