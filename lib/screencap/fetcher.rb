@@ -1,4 +1,11 @@
 module Screencap
+
+  def self.binary=()
+    @@binary_location = location
+  end
+
+  
+
   class Fetcher
     def initialize(url)
       @url = url
