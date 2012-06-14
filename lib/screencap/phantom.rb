@@ -4,7 +4,7 @@ module Screencap
 
     def self.rasterize(url, path, *args)
       # puts RASTERIZE.to_s, url, path, *args  # Your code goes here...
-      system("#{Screencap.binary} #{RASTERIZE.to_s} #{url} #{path} #{quoted_args(*args)}")
+      system("#{Screencap.binary} #{RASTERIZE.to_s} #{url} #{path} #{*args}")
       # Phantomjs.run(RASTERIZE.to_s, url, path, *args) 
     end
 
