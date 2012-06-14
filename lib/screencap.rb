@@ -9,8 +9,8 @@ module Screencap
   def self.binary=(location)
     @@binary = location
   end
-  
-  def binary
+
+  def self.binary
     @@binary
   end
 end
