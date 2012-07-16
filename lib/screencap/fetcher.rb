@@ -22,7 +22,9 @@ module Screencap
     end
 
     def fetched_file
-      File.open(filename)
+      if File.exists?(filename)
+        File.open(filename)
+      end
     end
 
     def raster(*args)
