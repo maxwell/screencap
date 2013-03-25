@@ -6,7 +6,17 @@ describe Screencap::Fetcher do
   end
 
   it 'supports a custom filename' do
-    screenshot = Screencap::Fetcher.new('http://yahoo.com').fetch(:output => Screencap::TMP_DIRECTORY + 'kats.png')
+    screenshot = Screencap::Fetcher.new('http://yahoo.com').fetch(:output => TMP_DIRECTORY + 'kats.png')
     File.exists?(screenshot).should == true
+  end
+
+  it 'supports a custom width' do
+  	screenshot = Screencap::Fetcher.new('http://google.com').fetch(:output => TMP_DIRECTORY + 'foo.jpg', :width => 800)
+  	FastImage.size(screenshot)[0].should == 800
+  end
+
+  it 'captures a given element' do
+  	screenshot = Screencap::Fetcher.new('http://google.com').fetch(:output => TMP_DIRECTORY + 'bar.jpg', :div => '#hplogo')
+  	FastImage.size(screenshot)[1].should == 110
   end
 end

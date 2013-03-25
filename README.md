@@ -29,7 +29,14 @@ it also currently supports a couple of options
 
 ```ruby
   f = Screencap::Fetcher.new('http://google.com')
-  screenshot = f.fetch(:div => '.header', :output => '~/my_directory.png') #dont forget the extension!
+  screenshot = f.fetch(
+  	:output => '~/my_directory.png', #dont forget the extension!
+  	# optional:
+  	:div => '.header',
+  	:width => 1024,
+  	:top => 0, :left => 0, :width => 100, :height => 100 # dimensions for a specific area
+  )
+
 ```
 
 ## To-do
