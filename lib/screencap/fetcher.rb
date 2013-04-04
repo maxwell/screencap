@@ -1,11 +1,4 @@
 module Screencap
-
-  def self.binary=()
-    @@binary_location = location
-  end
-
-  
-
   class Fetcher
     def initialize(url)
       @url = url
@@ -13,7 +6,7 @@ module Screencap
 
     def fetch(opts = {})
       @filename = opts.fetch(:output, clean_filename)
-      raster(@url, @filename, opts[:div])
+      raster(@url, @filename, opts)
       fetched_file
     end
 
