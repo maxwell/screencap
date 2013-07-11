@@ -8,7 +8,8 @@ module Screencap
         output: path
       }.merge(args).collect {|k,v| "#{k}=#{v}"}
       puts RASTERIZE.to_s, params
-      Phantomjs.run(RASTERIZE.to_s, *params)
+      result = Phantomjs.run(RASTERIZE.to_s, *params)
+      raise Screencap::Error, "Could not load URL #{url}" if result.match /Unable to load/
     end
 
     def quoted_args(args)
