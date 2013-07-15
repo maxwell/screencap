@@ -16,8 +16,8 @@ describe Screencap::Fetcher do
   end
 
   it 'captures a given element' do
-  	screenshot = Screencap::Fetcher.new('http://google.com').fetch(:output => TMP_DIRECTORY + 'bar.jpg', :div => '#hplogo')
-  	FastImage.size(screenshot)[1].should == 110
+  	screenshot = Screencap::Fetcher.new('http://placehold.it').fetch(:output => TMP_DIRECTORY + 'bar.jpg', :div => 'img.image')
+  	FastImage.size(screenshot)[0].should == 140
   end
 
   it 'should work when given a query string with ampersand in it' do
