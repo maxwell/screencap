@@ -4,7 +4,7 @@ module Screencap
 
     def self.rasterize(url, path, args = {})
       params = {
-        url: url,
+        url: CGI::escape(url),
         output: path
       }.merge(args).collect {|k,v| "#{k}=#{v}"}
       puts RASTERIZE.to_s, params
