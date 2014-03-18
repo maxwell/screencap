@@ -1,3 +1,3 @@
 module Screencap
-  VERSION = "0.0.4"
+  VERSION = "0.1.2"
 end
