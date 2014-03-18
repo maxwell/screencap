@@ -30,20 +30,16 @@ it also currently supports a couple of options
 ```ruby
   f = Screencap::Fetcher.new('http://google.com')
   screenshot = f.fetch(
-  	:output => '~/my_directory.png', #dont forget the extension!
+  	:output => '~/my_directory.png', # don't forget the extension!
   	# optional:
-  	:div => '.header',
+  	:div => '.header', # selector for a specific element to take screenshot of
   	:width => 1024,
+    :height => 768, # NOTE loads page in <object> tag so URL must be loadable in frame
   	:top => 0, :left => 0, :width => 100, :height => 100 # dimensions for a specific area
   )
 
 ```
 
-## To-do
-
-more tests
-better configuration
-expose more options
 ## Contributing
 
 1. Fork it

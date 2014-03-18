@@ -4,6 +4,7 @@ module Screencap
 
     def self.rasterize(url, path, args = {})
       params = {
+        frame: SCREENCAP_ROOT.join('screencap', 'frame.html'),
         url: CGI::escape(url),
         output: path
       }.merge(args).collect {|k,v| "#{k}=#{v}"}
