@@ -10,6 +10,9 @@ RSpec.configure do |config|
   config.filter_run :focus
 
   config.before(:all) do
-    # system("rm #{TMP_DIRECTORY}/*.png") leave them for now
+    unless ENV['KEEP_OUTPUT']
+      system("rm #{TMP_DIRECTORY}/*.png")
+      system("rm #{TMP_DIRECTORY}/*.jpg")
+    end
   end
 end
