@@ -32,6 +32,7 @@ it also currently supports a couple of options
   screenshot = f.fetch(
   	:output => '~/my_directory.png', # don't forget the extension!
   	# optional:
+  	:userAgent => 'Screencap browser',
   	:div => '.header', # selector for a specific element to take screenshot of
   	:width => 1024,
     :height => 768,
