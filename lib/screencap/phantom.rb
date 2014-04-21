@@ -1,3 +1,5 @@
+require 'cgi'
+
 module Screencap
   class Phantom
     RASTERIZE = SCREENCAP_ROOT.join('screencap', 'raster.js')
