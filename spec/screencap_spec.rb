@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Screencap do
   it 'works' do
     screenshot = Screencap::Fetcher.new('http://google.com').fetch(output: TMP_DIRECTORY + 'google.png')
-    FastImage.size(screenshot)[0].should == 1024
+    expect(FastImage.size(screenshot)[0]).to eq(1024)
   end
 
   it 'throws error when phantom could not load page' do
