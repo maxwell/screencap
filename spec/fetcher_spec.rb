@@ -6,7 +6,7 @@ describe Screencap::Fetcher do
   end
 
   it 'supports a custom filename' do
-    screenshot = Screencap::Fetcher.new('http://yahoo.com').fetch(:output => TMP_DIRECTORY + 'custom_filename.png')
+    screenshot = Screencap::Fetcher.new('http://stackoverflow.com').fetch(:output => TMP_DIRECTORY + 'custom_filename.png')
     File.exists?(screenshot).should == true
   end
 
@@ -22,8 +22,9 @@ describe Screencap::Fetcher do
   end
 
   it 'captures a given element' do
-    screenshot = Screencap::Fetcher.new('http://placehold.it').fetch(:output => TMP_DIRECTORY + 'given_element.jpg', :div => 'img.image')
-    FastImage.size(screenshot)[0].should == 140
+    screenshot = Screencap::Fetcher.new('http://placekitten.com').fetch(:output => TMP_DIRECTORY + 'given_element.jpg', :div => '#image-1')
+    FastImage.size(screenshot)[0].should == 200
+    FastImage.size(screenshot)[1].should == 287
   end
 
   it 'should work when given a query string with ampersand in it' do
