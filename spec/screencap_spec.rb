@@ -8,7 +8,7 @@ describe Screencap do
 
   it 'throws error when phantom could not load page' do
     expect {
-      Screencap::Fetcher.new('http://doesnotexistatallipromise.com/').fetch(output: TMP_DIRECTORY + 'foo.png')
-    }.to raise_error Screencap::Error, "Could not load URL http://doesnotexistatallipromise.com/"
+      Screencap::Fetcher.new('http://www.google.com/404').fetch(output: TMP_DIRECTORY + 'foo.png')
+    }.to raise_error Screencap::Error, "Could not load URL http://www.google.com/404"
   end
 end
