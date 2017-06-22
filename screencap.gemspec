@@ -15,8 +15,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Screencap::VERSION
 
-  gem.add_development_dependency 'rspec', '~> 2.10'
+  gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'fastimage'
-  gem.add_runtime_dependency 'phantomjs'
+  gem.add_runtime_dependency 'phantomjs', '~> 1.9.8'
 end
