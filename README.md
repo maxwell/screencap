@@ -40,6 +40,24 @@ it also currently supports a couple of options
 
 ```
 
+### Arguments
+
+* `url`                     - URL to screenshot
+* `output`                  - page to output (e.g. /tmp/output.png)
+* `width`        [optional] - default 1024 - viewport width
+* `height`       [optional] - viewport height (see note below on using height)
+* `debug`        [optional] - default false - whether to do some extra debugging
+* `div`          [optional] - a selector to use to screenshot to a specific element
+* `resourceWait` [optional] - default 300 - the time to wait after the last resource has loaded in MS before taking the screenshot
+* `maxRenderWait`[optional] - default 10000 - the maximum time to wait before taking the screenshot, regardless of whether resources are waiting to be loaded
+* `cutoffWait`   [optional] - default null - the maximum time to wait before cutting everything off and failing...this helps if there is a page taking a long time to load
+* `top`, `left`, `width`, `height` [optional] - dimensions to use to screenshot a specific area of the screen
+
+### Important notice when providing height
+
+If you provide a height then we resize the html & body tags. Otherwise, `render()` renders the entire page.
+Changing the viewport height does not affect this behaviour of `render()`, see https://github.com/ariya/phantomjs/issues/10619
+
 ## Contributing
 
 1. Fork it
